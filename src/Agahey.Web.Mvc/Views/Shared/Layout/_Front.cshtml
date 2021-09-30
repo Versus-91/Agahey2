@@ -19,7 +19,7 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <meta http-equiv="x-ua-compatible" content="ie=edge">
- @RenderSection("meta",required:false)
+	@RenderSection("meta",required:false)
  <title>@pageTitle</title>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css" asp-append-version="true">
  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v29.1.0/dist/font-face.css" rel="preload" as="font" type="text/css" asp-append-version="true" />
@@ -44,7 +44,7 @@
 	</div>
 	<div id="navbar" class="navbar-menu my-3" v-bind:class="{ 'is-active': isActive }">
 	 <div class="navbar-start">
-	  <a  class="navbar-item" href="/">
+	  <a class="navbar-item" href="/">
 	   <span class="icon has-text-info mx-1">
 		<i class="fas fa-home"></i>
 	   </span>
@@ -79,10 +79,10 @@
 								}
 								else
 								{
+		<nav class="navbar" role="navigation" aria-label="dropdown navigation">
 			<div class="navbar-item has-dropdown is-hoverable">
 			 <a class="navbar-link" href="#">
-			  <span class="icon has-text-grey mx-1">
-			   <i class="fas fa-ellipsis-v"></i>
+			  <span class="icon has-text-grey">
 			  </span>
 			  بیشتر
 			 </a>
@@ -114,7 +114,8 @@
 			  </a>
 			 </div>
 			</div>
-								}
+			</nav>
+			}
 	   </div>
 	  </div>
 	 </div>
@@ -126,21 +127,6 @@
 		@RenderBody()
  </div>
 	@RenderSection("scripts", required: false)
-@* <script>
-  var app = new Vue({
-   el: '#app',
-   data:function() {
-	 return {
-	 isActive:false,
-	 message: 'Hello Vue!'
-	 }
-   },
-   methods:{
-	activateNav:function(){
-	 this.isActive = !this.isActive;
-   }},
-	})
- </script>*@
 	@WebResourceManager.RenderScripts()
 </body>
 </html>

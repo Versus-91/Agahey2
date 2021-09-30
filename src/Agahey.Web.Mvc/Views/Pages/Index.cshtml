@@ -5,42 +5,62 @@
 	Layout = "/Views/Shared/Layout/_Front.cshtml";
 }
 @section meta{
-	<meta name="description" content="information about bitcoin.">
+<meta name="description" content="information about bitcoin.">
 }
 @section hero {
-<div class="hero  is-info" id="tabs">
+<section class="hero bd-hero bd-is-extensions">
 	<div class="hero-body">
+
 		<div class="container">
-		<div class="columns">
-			<div class="column is-2">
-				<figure class="image is-128x128">
-					<img class="is-rounded" alt="c# programming language" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/C_Sharp_wordmark.svg/1024px-C_Sharp_wordmark.svg.png">
-				</figure>
+
+			<div class="bd-hero-body">
+				<div class="bd-hero-heading">
+					<h1 class="title algolia-lvl0">
+
+						<span class="icon">
+							<i class="fas fa-plug"></i>
+						</span>
+
+						<p>بیتکوین <strong>Bitcoin</strong></p>
+
+					</h1>
+					<div class="subtitle is-4 algolia-lvl1">
+						<p>Side projects to <strong>enhance</strong> your Bulma <strong>experience</strong></p>
+
+					</div>
+
+				</div>
+
+				<div class="bd-hero-carbon">
+					<div id="carboncontainer">
+							<span class="icon has-text-success">
+							<i class="fas fa-play fa-2x"></i>
+						</span>
+					</div>
+
+				</div>
 			</div>
-			<div class="column is-10 mt-3">
-				<h1 class="title" v-on:click="alert('hello')">
-					@ViewData["page"]
-				</h1>
-				<h2 class="subtitle">
-					ثقف ثقف ثقف ثقف یبل یبل من هنحخثهف نل خحبل نخبیل خنبیل ویلب خسل یبل خیسبلحس.
-				</h2>
-			</div>
-			</div>
+
 		</div>
+
 	</div>
-	<div class="hero-foot">
-		<nav class="tabs is-boxed is-fullwidth">
-			<div class="container">
-				<ul>
-					<li v-for="tab of tabs" :key="tab"  v-bind:class="{'is-active': tab == activeTab }" v-on:click="setActiveTab(tab)">
-						<a href="#">
-							<i class="fas fa-link mx-1"></i>
-							{{tab}}
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+</section>
+<div class="bd-call bd-is-twitter">
+	<div class="bd-call-body">
+		<p class="bd-call-text">
+			فکر می کنید جای موضوع خاصی تو سایت ما خالیه ؟ <strong>درباره اش به ما بگید</strong> <span style="font-size: 20px; margin-left: 2px; position: relative; top: 1px;">🤗</span>
+		</p>
+		<p class="bd-call-button">
+
+			<a class="bd-tw-button bd-fat-button button is-twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Here is my lovely website!&amp;hashtags=madewithbulma">
+				<span class="icon">
+					<i class="fab fa-twitter"></i>
+				</span>
+				<span>
+					#madewithbulma
+				</span>
+			</a>
+		</p>
 	</div>
 </div>
 }
@@ -76,22 +96,22 @@
 <environment names="Development">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
 	<script>
-	 var app= new Vue({
-	   el:'#tabs',
-	   data:function(){
-		   return {
-			   tabs : ['links','posts','learn','code','commnets'],
-			   activeTab:'',
-		   }
-	   },
-	   methods:{
-		   setActiveTab:function(tab){
-			   console.log("clicked");
-		   this.activeTab = tab;
-	   }
-	   }
-	 });
-    </script>
+		var app= new Vue({
+		  el:'#tabs',
+		  data:function(){
+			  return {
+				  tabs : ['links','posts','learn','code','commnets'],
+				  activeTab:'',
+			  }
+		  },
+		  methods:{
+			  setActiveTab:function(tab){
+				  console.log("clicked");
+			  this.activeTab = tab;
+		  }
+		  }
+		});
+	</script>
 </environment>
 
 <environment names="Staging,Production">
