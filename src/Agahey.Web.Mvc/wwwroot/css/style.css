@@ -2,7 +2,19 @@
     font-family: 'Vazir';
 }
 @charset "UTF-8"; /*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
+.bg-blue{
+    background-color: #85DCBa;
+}
+.card {
 
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    transition: .3s;
+}
+
+   .card:hover {
+        box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
+        transform: scale(1.05,1.05);
+    }
 .bulma-control-extend, .button, .file-cta, .file-name, .input, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .select select, .textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
