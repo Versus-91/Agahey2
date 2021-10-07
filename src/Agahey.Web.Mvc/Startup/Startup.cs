@@ -58,7 +58,15 @@ namespace Agahey.Web.Startup
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
             services.AddSignalR();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "abc",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:9050"
+                                                          );
+                                  });
+            });
             // Configure Abp and Dependency Injection
             return services.AddAbp<AgaheyWebMvcModule>(
                 // Configure Log4Net logging
@@ -92,6 +100,7 @@ namespace Agahey.Web.Startup
             app.UseAuthentication();
 
             app.UseJwtTokenMiddleware();
+            app.UseCors("abc");
 
             app.UseAuthorization();
 
