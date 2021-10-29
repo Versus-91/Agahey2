@@ -1,0 +1,88 @@
+﻿@using Agahey.Web.Startup
+@{
+	ViewBag.Title = "خانه";
+	ViewBag.CurrentPageName = PageNames.Home;
+	Layout = "/Views/Shared/Layout/_Front.cshtml";
+}
+@section meta{
+<meta name="description" content="information about bitcoin.">
+}
+@section hero {
+
+<div class="bd-call bd-is-twitter">
+	<div class="bd-call-body">
+		<p class="bd-call-text">
+			فکر می کنید جای موضوع خاصی تو سایت ما خالیه ؟ <strong>درباره اش به ما بگید</strong> <span style="font-size: 20px; margin-left: 2px; position: relative; top: 1px;">🤗</span>
+		</p>
+		<p class="bd-call-button">
+
+			<a class="bd-tw-button bd-fat-button button is-twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Here is my lovely website!&amp;hashtags=madewithbulma">
+				<span class="icon">
+					<i class="fab fa-twitter"></i>
+				</span>
+				<span>
+					#madewithbulma
+				</span>
+			</a>
+		</p>
+	</div>
+</div>
+}
+
+<section class="section">
+ <div class="container">
+  <div class="columns is-multiline">
+   <div class="column is-12">
+	   
+	   dsfsdfsdf
+   </div>
+   <div class="column">
+	<div class="notification is-info">
+	 <h1 class="title is-size-4">Bulma ?</h1>
+	 Bulma is a modern CSS framework from @@jgthms, based on Flexbox.
+	 Using Bulma, we can describe our website's design using just classes. ᕕ( ᐛ )ᕗ
+	</div>
+   </div>
+   <div class="column">
+	<div class="notification is-primary">
+	 Flexbox is a CSS spec that makes sectioning and aligning more natural.
+	 We don't need to know Flexbox but it's how Bulma works behind-the-scenes. ⦤(^ー^)⦥
+	</div>
+   </div>
+   <div class="column">
+	<div class="notification is-warning">
+	 Instead of writing our CSS per-element, we can use predefined classes.
+	 With enough classes, we can describe our website design using semantics. ٩(^ᴗ^)۶
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+@section scripts
+{
+<environment names="Development">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+	<script>
+		var app= new Vue({
+		  el:'#tabs',
+		  data:function(){
+			  return {
+				  tabs : ['links','posts','learn','code','commnets'],
+				  activeTab:'',
+			  }
+		  },
+		  methods:{
+			  setActiveTab:function(tab){
+				  console.log("clicked");
+			  this.activeTab = tab;
+		  }
+		  }
+		});
+	</script>
+</environment>
+
+<environment names="Staging,Production">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</environment>
+}
